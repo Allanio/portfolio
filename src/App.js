@@ -1,46 +1,39 @@
+//React Imports
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+//Style Imports
 import Container from "react-bootstrap/Container";
 import { Navbar, Nav } from "react-bootstrap";
-
 import "./App.css";
-import Footer from "./comonents/Footer";
+//Component Imports
+import Footer from "./components/Footer";
+//Pages Imports
 import Home from "./pages/Home";
 import CV from "./pages/CV";
-import About from "./pages/About";
+import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
-
-/* function App() {
-  return (
-    <div className="App">
-      <Header />
-      <MainContent />
-      <Footer />
-    </div>
-  );
-} */
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "First Name, Last Name",
+      title: "Allan Kadhem ",
       headerLinks: [
         { title: "Home", path: "/" },
         { title: "CV", path: "/cv" },
-        { title: "About", path: "/about" },
+        { title: "Projects", path: "/projects" },
         { title: "Contact", path: "/contact" }
       ],
       home: {
-        title: "This is the Home Page",
-        subTitle: "This is the Sub Title",
-        someText: "This is some text"
+        title: "Allan Kadhem",
+        subTitle: "Graduate full-stack web developer.",
+        someText: "Checkout my latest work"
       },
       cv: {
         title: "The boring stuff"
       },
-      about: {
-        title: "About me"
+      projects: {
+        title: "My works"
       },
       contact: {
         title: "Let's talk"
@@ -64,8 +57,8 @@ class App extends React.Component {
                 <Link className="nav-link" to="/cv">
                   CV
                 </Link>
-                <Link className="nav-link" to="/about">
-                  About
+                <Link className="nav-link" to="/projects">
+                  Projects
                 </Link>
                 <Link className="nav-link" to="/contact">
                   Contact
@@ -81,25 +74,19 @@ class App extends React.Component {
               <Home
                 title={this.state.home.title}
                 subTitle={this.state.home.subTitle}
-                someText={this.state.home.subTitle}
+                someText={this.state.home.someText}
               />
             )}
           />
-          <Route
+          <Route 
             path="/cv"
-            exact
-            render={() => <CV title={this.state.cv.title} />}
-          />
+            render={() => <CV title={this.state.cv.title} /> } />
           <Route
-            path="/about"
-            exact
-            render={() => <About title={this.state.about.title} />}
-          />
+            path="/projects"
+            render={() => <Projects title={this.state.projects.title} /> } />
           <Route
             path="/contact"
-            exact
-            render={() => <Contact title={this.state.contact.title} />}
-          />
+            render={() => <Contact title={this.state.contact.title} /> } />
 
           <Footer />
         </Container>

@@ -10,7 +10,7 @@ function Footer() {
             Allan Kadhem
           </Col>
           <Col className="p-0 d-flex justify-content-end" md={4}> 
-            This site was made using React & Bootstrap. Find out how here.
+            Built using React & Bootstrap. Find out how here.
           </Col>
         </Row>
       </Container>
