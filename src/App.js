@@ -17,12 +17,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "Allan Kadhem ",
+      title: "Allan Kadhem",
       headerLinks: [
-        { title: "Home", path: "/" },
-        { title: "CV", path: "/cv" },
-        { title: "Projects", path: "/projects" },
-        { title: "Contact", path: "/contact" }
+        { title: "Home", path: "/portfolio/" },
+        { title: "CV", path: "/portfolio/cv" },
+        { title: "Projects", path: "/portfolio/projects" },
+        { title: "Contact", path: "/portfolio/contact" }
       ],
       home: {
         title: "Allan Kadhem",
@@ -51,16 +51,16 @@ class App extends React.Component {
             <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
             <Navbar.Collapse id="navbar-toggle">
               <Nav className="ml-auto">
-                <Link className="nav-link" to="/">
+                <Link className="nav-link" to="/portfolio/">
                   Home
                 </Link>
-                <Link className="nav-link" to="/cv">
+                <Link className="nav-link" to="/portfolio/cv">
                   CV
                 </Link>
-                <Link className="nav-link" to="/projects">
+                <Link className="nav-link" to="/portfolio/projects">
                   Projects
                 </Link>
-                <Link className="nav-link" to="/contact">
+                <Link className="nav-link" to="/portfolio/contact">
                   Contact
                 </Link>
               </Nav>
@@ -68,7 +68,7 @@ class App extends React.Component {
           </Navbar>
 
           <Route
-            path="/"
+            path="/portfolio/"
             exact
             render={() => (
               <Home
@@ -79,13 +79,13 @@ class App extends React.Component {
             )}
           />
           <Route 
-            path="/cv"
+            path="/portfolio/cv"
             render={() => <CV title={this.state.cv.title} /> } />
           <Route
-            path="/projects"
+            path="/portfolio/projects"
             render={() => <Projects title={this.state.projects.title} /> } />
           <Route
-            path="/contact"
+            path="/portfolio/contact"
             render={() => <Contact title={this.state.contact.title} /> } />
 
           <Footer />
